@@ -16,4 +16,9 @@ export class GestorPuntuacion {
     this.puntuaciones.set(jugador, total);
     return total;
   }
+
+  // Devuelve la puntuacion actual del jugador; cero si no existe.
+  obtenerPuntos(jugador: string): number {
+    return this.puntuaciones.get(jugador) ?? 0;
+  }
 }
