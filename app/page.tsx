@@ -67,6 +67,14 @@ export default function Home() {
         >
           Consultar puntos
         </button>
+        <button
+          onClick={() => {
+            gestor.reiniciarPuntos(jugador);
+            setResultado(`${jugador} tiene 0 puntos`);
+          }}
+        >
+          Reiniciar puntos
+        </button>
       </div>
 
       <p>Resultado: {resultado}</p>

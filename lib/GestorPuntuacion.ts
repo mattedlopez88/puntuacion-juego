@@ -21,4 +21,9 @@ export class GestorPuntuacion {
   obtenerPuntos(jugador: string): number {
     return this.puntuaciones.get(jugador) ?? 0;
   }
+
+  // Reinicia a cero la puntuacion del jugador.
+  reiniciarPuntos(jugador: string): void {
+    this.puntuaciones.set(jugador, 0);
+  }
 }
