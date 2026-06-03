@@ -38,3 +38,23 @@ describe("restarPuntos", () => {
     expect(gestor.restarPuntos("luis", 4)).toBe(-4);
   });
 });
+
+describe("obtenerPuntos", () => {
+  it("devuelve la puntuacion actual del jugador", () => {
+    const gestor = new GestorPuntuacion();
+    gestor.sumarPuntos("ana", 7);
+    expect(gestor.obtenerPuntos("ana")).toBe(7);
+  });
+
+  it("devuelve cero para un jugador desconocido", () => {
+    const gestor = new GestorPuntuacion();
+    expect(gestor.obtenerPuntos("desconocido")).toBe(0);
+  });
+
+  it("no modifica la puntuacion al consultarla", () => {
+    const gestor = new GestorPuntuacion();
+    gestor.sumarPuntos("ana", 4);
+    gestor.obtenerPuntos("ana");
+    expect(gestor.obtenerPuntos("ana")).toBe(4);
+  });
+});
