@@ -9,4 +9,11 @@ export class GestorPuntuacion {
     this.puntuaciones.set(jugador, total);
     return total;
   }
+
+  // Resta puntos al jugador (parte de cero si es nuevo) y devuelve el total.
+  restarPuntos(jugador: string, puntos: number): number {
+    const total = (this.puntuaciones.get(jugador) ?? 0) - puntos;
+    this.puntuaciones.set(jugador, total);
+    return total;
+  }
 }

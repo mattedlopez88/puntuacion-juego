@@ -49,6 +49,15 @@ export default function Home() {
         >
           Sumar puntos
         </button>
+        <button
+          onClick={() =>
+            setResultado(
+              `${jugador} tiene ${gestor.restarPuntos(jugador, cantidad)} puntos`,
+            )
+          }
+        >
+          Restar puntos
+        </button>
       </div>
 
       <p>Resultado: {resultado}</p>
