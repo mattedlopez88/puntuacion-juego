@@ -58,3 +58,20 @@ describe("obtenerPuntos", () => {
     expect(gestor.obtenerPuntos("ana")).toBe(4);
   });
 });
+
+describe("reiniciarPuntos", () => {
+  it("deja en cero la puntuacion del jugador", () => {
+    const gestor = new GestorPuntuacion();
+    gestor.sumarPuntos("ana", 9);
+    gestor.reiniciarPuntos("ana");
+    expect(gestor.obtenerPuntos("ana")).toBe(0);
+  });
+
+  it("solo reinicia al jugador indicado", () => {
+    const gestor = new GestorPuntuacion();
+    gestor.sumarPuntos("ana", 9);
+    gestor.sumarPuntos("luis", 4);
+    gestor.reiniciarPuntos("ana");
+    expect(gestor.obtenerPuntos("luis")).toBe(4);
+  });
+});
